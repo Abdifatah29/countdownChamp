@@ -4,8 +4,12 @@ class Body extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            deadline: 'May 25, 2020'
+            deadline: 'May 25, 2020',
+            newDeadline: ''
         }
+    }
+    changeDeadline = () => {
+        this.setState({deadline: this.state.newDeadline})
     }
     render() {
         return (
@@ -18,8 +22,10 @@ class Body extends Component {
                 <div>20 seconds</div>
              </div>
              <div>
-                 <input placeholder="new date"/>
-                 <button>Submit</button>
+                 <input placeholder="new date"
+                     onChange={event => this.setState({newDeadline: event.target.value})}
+                 />
+                 <button onClick={this.changeDeadline}>Submit</button>
              </div>
             </div>
         )
