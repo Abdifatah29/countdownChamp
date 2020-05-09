@@ -4,7 +4,7 @@ class Body extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            deadline: 'May 25, 2020',
+            deadline:  '29 November, 2020',
             newDeadline: ''
         }
     }
@@ -18,10 +18,14 @@ class Body extends Component {
              <Clock
                  deadline={this.state.deadline}
              />
-             <div>
-                 <input placeholder="new date"
+             <div className="form__group field">
+                <input
                      onChange={event => this.setState({newDeadline: event.target.value})}
-                 />
+                     type="input" class="form__field" placeholder="New Date" name="Date" required />
+                <label for="Date" class="form__label">New Date</label>
+            </div>
+            
+             <div className="button">
                  <button onClick={this.changeDeadline}>Submit</button>
              </div>
             </div>
