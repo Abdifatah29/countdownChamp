@@ -1,0 +1,128 @@
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+.App {
+  font-family: 'Poppins',sans-serif;
+  text-align: center;
+  font-size: 11px;
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  background-color:#222222;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.clocks > div{
+    display: inline;
+    margin: 10px;
+}
+
+.form__group,
+.button {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+    left: 25%;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: $white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        color: transparent;
+    }
+
+    &:placeholder-shown~.form__label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+    }
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $gray;
+}
+
+.form__field:focus {
+    ~.form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $primary;
+        font-weight: 700;
+    }
+
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $primary, $secondary);
+    border-image-slice: 1;
+}
+
+/* reset input */
+.form__field {
+
+    &:required,
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+.button{
+        button {
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #60a3bc;
+            padding: 6px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            outline: nonew;
+            transition: all 0.4s ease 0s;
+
+            :hover {
+                text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+                -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+                -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+                transition: all 0.4s ease 0s;
+            }
+        }
+
+}
+
+@media only screen and (min-width: 560px) {
+    .App{
+        font-size: 35px;
+    }
+    .title{
+    font-size: 50px;
+    }
+
+
+}
